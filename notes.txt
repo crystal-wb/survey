@@ -1,0 +1,15 @@
+-logging system
+    login/password
+    logout
+    change passwrd
+    recover password
+    gem Devise
+-take survey
+    user_id
+    date
+    difficulty
+    comments
+-stats about survey
+    search by date
+    ratings and a list of comments
+-auto email when class is done
