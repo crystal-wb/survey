@@ -1,0 +1,30 @@
+<form action=<%=survey_path%> method='post'>
+    <div class="form-group">
+         <input class="form-control" type='text' name='date' placeholder='Class Date'>
+    </div>
+    <div class='row'>
+        How difficult was the class?
+    </div>
+    <div class="form-group">
+        <label class="radio-inline">
+              <input class="form-control" type="radio" name='difficulty' value="1">1
+         </label>
+         <label class="radio-inline">
+              <input class="form-control" type="radio" name='difficulty' value="2">2
+         </label>
+         <label class="radio-inline">
+              <input class="form-control" type="radio" name='difficulty' value="3">3
+         </label>
+         <label class="radio-inline">
+              <input class="form-control" type="radio" name='difficulty' value="4">4
+         </label>
+         <label class="radio-inline">
+              <input class="form-control" type="radio" name='difficulty' value="5">5
+         </label>
+    </div>
+  <div class="form-group">
+      <textarea class="form-control" type='text' name="comment" placeholder="Any comments?"></textarea>
+  </div>
+  <textarea class="form-control" type='text' name="comments" placeholder="Any comments?"></textarea>
+  <input class="form-control" type="submit" value="Save">
+</form>

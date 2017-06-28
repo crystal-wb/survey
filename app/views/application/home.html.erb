@@ -2,6 +2,7 @@ Hello
 <% if user_signed_in? %>
 Welcome <%= current_user.email %>
 <%= link_to 'Logout', '/users/sign_out', method: "delete" %>
+<a href="/users/edit">Change Password</a>
 <% else %>
 <a href="/users/sign_in">Login</a>
 <% end %>

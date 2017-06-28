@@ -1,9 +1,9 @@
 -logging system
-    login/password
-    logout
-    change passwrd
+    *login/password
+    *logout
+    *change passwrd
     recover password
-    gem Devise
+    *gem Devise
 -take survey
     user_id
     date
@@ -13,3 +13,13 @@
     search by date
     ratings and a list of comments
 -auto email when class is done
+
+#tables
+
+users
+
+##surveys
+-user_id integer
+-date (date when class happened) date
+-difficulty integer
+-comments string
