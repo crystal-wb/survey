@@ -1,30 +1,44 @@
-<form action=<%=survey_path%> method='post'>
+<% if @survey.errors.any? %>
+    <div class="alert alert-danger">
+        <ul>
+            <% @survey.errors.full_messages.each do |message|%>
+                <li>
+                    <%=message%>
+                </li>
+            <%end%>
+        </ul>
+    </div>
+<%end%>
+<%= form_for @survey do |f| %>
     <div class="form-group">
-         <input class="form-control" type='text' name='date' placeholder='Class Date'>
+         <!--<input class="form-control" type='text' name='date' placeholder='Class Date'>-->
+         <%= f.date_field :date, class: 'form-control', placeholder: 'Date' %>
     </div>
     <div class='row'>
-        How difficult was the class?
+        <div class="col-md-12">
+            How difficult was the class?
+        </div>
     </div>
-    <div class="form-group">
         <label class="radio-inline">
-              <input class="form-control" type="radio" name='difficulty' value="1">1
+            <%=f.radio_button('difficulty', "1")%>1
+              <!--<input type="radio" name='difficulty' value="1">1-->
          </label>
          <label class="radio-inline">
-              <input class="form-control" type="radio" name='difficulty' value="2">2
+              <%=f.radio_button('difficulty', "2")%>2
          </label>
          <label class="radio-inline">
-              <input class="form-control" type="radio" name='difficulty' value="3">3
+               <%=f.radio_button('difficulty', "3")%>3
          </label>
          <label class="radio-inline">
-              <input class="form-control" type="radio" name='difficulty' value="4">4
+               <%=f.radio_button('difficulty', "4")%>4
          </label>
          <label class="radio-inline">
-              <input class="form-control" type="radio" name='difficulty' value="5">5
+               <%=f.radio_button('difficulty', "5")%>5
          </label>
-    </div>
   <div class="form-group">
-      <textarea class="form-control" type='text' name="comment" placeholder="Any comments?"></textarea>
+      <%=f.text_area :comments, class: 'form-control', placeholder: "Comments"%>
+      <!--<textarea class="form-control" type='text' name="comment" placeholder="Any comments?"></textarea>-->
   </div>
-  <textarea class="form-control" type='text' name="comments" placeholder="Any comments?"></textarea>
-  <input class="form-control" type="submit" value="Save">
-</form>
+  <%=f.submit%>
+  <!--<input class="form-control" type="submit" value="Save">-->
+<%end%>
