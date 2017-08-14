@@ -1,0 +1,15 @@
+Lesson Date: <%= @lesson.date %>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Submitted</th>
+        <th>Difficulty</th>
+        <th>Comments</th>
+    </tr>
+    <% @lessons.class_surveys().each do |class_survey| %>
+    <tr>
+        <td><%=class_survey.created_at %></td>
+        <td><%= class_survey.difficulty %></td>
+        <td><%= class_survey.comment s%></td>
+    </tr>
+</table>

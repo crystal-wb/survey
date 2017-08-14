@@ -2,9 +2,7 @@
     <div class="alert alert-danger">
         <ul>
             <% @survey.errors.full_messages.each do |message|%>
-                <li>
-                    <%=message%>
-                </li>
+                <li><%=message%></li>
             <%end%>
         </ul>
     </div>
@@ -12,7 +10,7 @@
 <%= form_for @survey do |f| %>
     <div class="form-group">
          <!--<input class="form-control" type='text' name='date' placeholder='Class Date'>-->
-         <%= f.date_field :date, class: 'form-control', placeholder: 'Date' %>
+        <%= f.hidden_field :lesson_id%>
     </div>
     <div class='row'>
         <div class="col-md-12">

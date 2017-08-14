@@ -1,0 +1,19 @@
+<a href="/lessons/new" class=="btn btn-default">New</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Date</th>
+        <th>Video Url</th>
+        <th>Survey Url</th>
+        <th>Notes</th>
+        <th>Results</th>
+    </tr>
+    <% @lesson.each do |lesson| %>
+        <tr>
+            <td><%= lesson.date %></td>
+            <td><%= lesson.video_url %></td>
+            <td><a href="<%="/survey?lesson_id=#{lesson.id}"%>">Survey</a></td>
+            <td><%= lesson.notes %></td>
+            <td><a href="<%="/lessons/survey_results?lesson_id=#{lesson.id}"%>">Results</a></td>
+        </tr>
+        <% end %>
+</table>
